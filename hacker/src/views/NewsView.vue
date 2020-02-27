@@ -21,7 +21,7 @@ export default {
     // },
     computed: {
         list() {
-            return this.store.state.list;
+            return this.$store.state.list;
         }
     },
     created() {

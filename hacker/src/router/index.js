@@ -4,7 +4,7 @@ import NewsView from '../views/NewsView.vue';
 import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {

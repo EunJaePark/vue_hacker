@@ -2,18 +2,19 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { fetchListItem } from '../api/index.js';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export const store = new Vuex.Store({  //actions이 mutations을 실행해주고, mutations가 state에 값을 주는 것.
   state: {
-    list: []
+    list: []  // 데이터 저장하는 일
   },
   mutations: {
-    SET_LIST(state, list) {  
+    SET_LIST(state, list) {   // state에 저장
       state.list = list;
     }
   },
   actions: {
+    // api/index.js에 데이터 가져오는 행동대장들을 호출해서 받고, 뮤테이션에 넘김   // promise 방식
     FETCH_LIST(context, pageName) {  //두개의 인자를 받아야함. context는 정해져 있는 것(자동으로 생겨서 받아오게 되는 것). 
       return fetchListItem(pageName)
       .then(res => {
